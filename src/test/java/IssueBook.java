@@ -97,8 +97,10 @@ public class IssueBook {
     @Test
     @DisplayName("returns false during book issuance due to expired library card")
     void False__WhenLibraryCardIsExpired() throws  IllegalBookIssueException{
-        // Set expiry date in the future
+        
+        // Set expiry date in the past so that it shows the library card as expired
         libraryCard.setExpiryDate(new Date(System.currentTimeMillis() - 1000)); 
+
         assertFalse(libraryCard.issueBook(availableHighDemandBook));
         assertFalse(libraryCard.issueBook(availableLowDemandBook));
     }
