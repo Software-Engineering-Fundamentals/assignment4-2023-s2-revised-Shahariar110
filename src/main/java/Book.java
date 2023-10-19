@@ -43,16 +43,11 @@ public class Book {
      */
     private int days = 0;
 
-
-
-
     public Book(int ID, String title, int demand) {
         this.ID = ID;
         this.title = title;
 	   this.demand = demand;
     }
-
-
 
     public int getDemand() {
         return this.demand;
@@ -93,12 +88,12 @@ public class Book {
     public boolean getStatus() {
         return status;
     }
-
-    public void setDemand(boolean status) {
+    
+    //Earlier it was setDemand, may be it was a mistake.
+    // That's why changed it to setStatus, as there is no setter method for "status" variable
+    public void setStatus(boolean status) {
         this.status = status;
     }
-
-
 
 
 }
